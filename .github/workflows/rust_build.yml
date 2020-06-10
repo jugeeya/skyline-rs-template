@@ -14,6 +14,8 @@ jobs:
       run: cargo install --git https://github.com/jam1garner/cargo-skyline
     - name: Install rust-std-skyline-squashed
       run: cd .. && git clone https://github.com/jam1garner/rust-std-skyline-squashed && cd -
+    - name: Install xargo
+      run: cargo install xargo
     - name: Attempt to build
       run: XARGO_RUST_SRC=$(realpath ../rust-std-skyline-squashed/src) PATH=$PATH:/usr/share/rust/.rustup/toolchains/nightly-2020-04-10-x86_64-unknown-linux-gnu/lib/rustlib/x86_64-unknown-linux-gnu/bin cargo skyline build --release
     - name: Update Release
